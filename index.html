@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -8,64 +9,146 @@
 *{box-sizing:border-box}
 body{
  margin:0;
- background:#0b0b0e;
+ background:#0b0b0b;
  color:#fff;
  font-family:Arial,sans-serif;
 }
 header{
  text-align:center;
- padding:35px 15px;
- background:linear-gradient(135deg,#171717,#302515);
- border-bottom:1px solid #b99a57;
+ padding:38px 15px 28px;
+ background:linear-gradient(135deg,#101010,#292116);
+ border-bottom:1px solid #b89957;
 }
 .logo{
- font-size:36px;
+ font-size:34px;
  font-weight:900;
- letter-spacing:4px;
- color:#e4c27a;
+ letter-spacing:5px;
+ color:#d8b56c;
 }
-header p{color:#ddd;font-size:13px;letter-spacing:2px}
-.hero{padding:25px 16px;text-align:center}
-.hero h1{font-size:27px;color:#e4c27a}
-.hero p{color:#bbb;line-height:1.7}
-.container{max-width:750px;margin:auto;padding:15px}
+.tagline{
+ font-size:11px;
+ letter-spacing:3px;
+ color:#ddd;
+ margin-top:10px;
+}
+.hero{
+ text-align:center;
+ padding:38px 20px 25px;
+}
+.hero h1{
+ font-size:28px;
+ color:#e2c17b;
+ line-height:1.35;
+}
+.hero p{
+ color:#c0c0c0;
+ font-size:14px;
+ line-height:1.8;
+ max-width:550px;
+ margin:auto;
+}
+.gold-line{
+ width:70px;
+ height:2px;
+ background:#c7a45d;
+ margin:20px auto;
+}
+.container{
+ max-width:700px;
+ margin:auto;
+ padding:15px;
+}
 .section-title{
- color:#e4c27a;
+ text-align:center;
+ color:#dfbd75;
  font-size:22px;
- margin:30px 0 18px;
+ margin:25px 0;
+ letter-spacing:2px;
 }
 .card{
- background:#17171b;
- border:1px solid #333;
+ background:#171717;
+ border:1px solid #35302a;
  border-radius:15px;
  overflow:hidden;
- margin-bottom:22px;
+ margin-bottom:25px;
+ box-shadow:0 8px 25px #0005;
 }
 .card img{
  width:100%;
  display:block;
+ cursor:pointer;
  object-fit:cover;
- min-height:220px;
 }
-.card-content{padding:16px}
-.card h3{margin:0 0 10px;color:#e4c27a}
-.card p{color:#bbb;font-size:14px;line-height:1.6}
-.btn{
+.card-content{
+ padding:18px;
+}
+.card h3{
+ color:#e0bd76;
+ margin:0 0 10px;
+ font-size:19px;
+}
+.card p{
+ color:#c3c3c3;
+ font-size:14px;
+ line-height:1.7;
+}
+.order-btn{
  display:block;
+ background:linear-gradient(135deg,#d7b46b,#a78340);
+ color:#111;
  text-align:center;
  text-decoration:none;
- background:#b99a57;
- color:#111;
- font-weight:bold;
- padding:14px;
+ padding:15px;
  border-radius:10px;
- margin-top:14px;
+ font-weight:bold;
+ margin-top:15px;
+}
+.about{
+ background:#151515;
+ border:1px solid #333;
+ padding:22px;
+ border-radius:14px;
+ margin:25px 0;
+}
+.about h2{
+ color:#dfbd75;
+ text-align:center;
+}
+.about p{
+ color:#ccc;
+ line-height:1.8;
+ font-size:14px;
+ text-align:center;
 }
 footer{
  text-align:center;
  padding:30px 15px;
  color:#aaa;
+ font-size:13px;
  border-top:1px solid #333;
+}
+#viewer{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.95);
+ z-index:999;
+ align-items:center;
+ justify-content:center;
+ padding:15px;
+}
+#viewer img{
+ max-width:100%;
+ max-height:90vh;
+ object-fit:contain;
+}
+#viewer span{
+ position:absolute;
+ top:20px;
+ right:25px;
+ color:white;
+ font-size:35px;
+ cursor:pointer;
 }
 </style>
 </head>
@@ -73,65 +156,79 @@ footer{
 
 <header>
 <div class="logo">VODIYNUR</div>
-<p>DECOR • WEDDING • PREMIUM DESIGN</p>
+<div class="tagline">DECOR • WEDDING • PREMIUM DESIGN</div>
 </header>
 
-<div class="hero">
+<section class="hero">
 <h1>Orzudagi to‘y — Vodiynur bilan!</h1>
-<p>To‘y va marosimlar uchun nafis, zamonaviy
-va unutilmas dekoratsiyalar.</p>
-</div>
+<div class="gold-line"></div>
+<p>
+Vodiynur Decor — to‘y va marosimlar uchun
+zamonaviy sahna bezaklari, gullar, arkalar,
+fotozonalar va unutilmas dizaynlar.
+Har bir to‘yga o‘ziga xos go‘zallik ulashamiz.
+</p>
+</section>
 
 <div class="container">
+
+<div class="about">
+<h2>Vodiynur Decor</h2>
+<p>
+Biz to‘y marosimlarini yanada chiroyli,
+nafis va unutilmas qilish uchun dekoratsiyalar
+yaratamiz. O‘zimizning bajarilgan ishlarimiz
+bilan tanishing va sizga yoqqan bezakni tanlang.
+</p>
+</div>
+
 <h2 class="section-title">DEKOR KATALOGI</h2>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80">
+<img src="decor1.jpg" onclick="showImage(this.src)">
 <div class="card-content">
-<h3>01 — SAHNA DEKORLARI</h3>
-<p>Kelin-kuyov uchun maxsus sahna bezaklari,
-gul kompozitsiyalari va premium dizaynlar.</p>
+<h3>01 — PUSHTINAFIS SAHNA</h3>
+<p>
+Gullar bilan bezatilgan nafis sahna.
+Kelin-kuyov uchun romantik va chiroyli muhit.
+</p>
+<a class="order-btn" href="https://t.me/Vodiynur_dekor">
+✉️ Shu dekorni buyurtma qilish
+</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80">
+<img src="decor2.jpg" onclick="showImage(this.src)">
 <div class="card-content">
-<h3>02 — ARKA VA GULLIK ARKA</h3>
-<p>Marosimlar uchun nafis gullik arkalar
-va maxsus bezaklar.</p>
+<h3>02 — PREMIUM GREEN</h3>
+<p>
+Yashil rangdagi hashamatli sahna,
+maxsus pardalar, gullar va premium bezaklar.
+</p>
+<a class="order-btn" href="https://t.me/Vodiynur_dekor">
+✉️ Shu dekorni buyurtma qilish
+</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1464366400607-2a2b7b5b6b3f?auto=format&fit=crop&w=1000&q=80">
+<img src="decor3.jpg" onclick="showImage(this.src)">
 <div class="card-content">
-<h3>03 — FOTOZONA</h3>
-<p>Mehmonlar uchun chiroyli suratga tushish
-maydonlari va dekorlar.</p>
+<h3>03 — WEDDING DAY FOTOZONA</h3>
+<p>
+Yorug‘lik, gullar va nafis fotozona.
+To‘y kuningiz uchun o‘ziga xos bezak.
+</p>
+<a class="order-btn" href="https://t.me/Vodiynur_dekor">
+✉️ Shu dekorni buyurtma qilish
+</a>
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80">
-<div class="card-content">
-<h3>04 — YO‘LAK VA HOVLI DEKORI</h3>
-<p>To‘y kirish yo‘laklari, gullar va
-marosim uchun maxsus bezaklar.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1000&q=80">
-<div class="card-content">
-<h3>05 — LED MONITOR DEKORI</h3>
-<p>Kelin-kuyov sahnasi uchun ekran va
-zamonaviy vizual bezaklar.</p>
-</div>
-</div>
-
-<a class="btn" href="https://t.me/Vodiynur_dekor">
-BOG‘LANISH VA BUYURTMA</a>
+<a class="order-btn" href="https://t.me/Vodiynur_dekor">
+📲 VODIYNUR DECOR BILAN BOG‘LANISH
+</a>
 
 </div>
 
@@ -139,6 +236,21 @@ BOG‘LANISH VA BUYURTMA</a>
 VODIYNUR DECOR © 2026<br>
 To‘ylaringizga go‘zallik ulashamiz
 </footer>
+
+<div id="viewer" onclick="hideImage()">
+<span>×</span>
+<img id="bigImage">
+</div>
+
+<script>
+function showImage(src){
+ document.getElementById("bigImage").src=src;
+ document.getElementById("viewer").style.display="flex";
+}
+function hideImage(){
+ document.getElementById("viewer").style.display="none";
+}
+</script>
 
 </body>
 </html>
